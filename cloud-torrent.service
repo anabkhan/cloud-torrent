@@ -1,0 +1,14 @@
+[Unit]
+Description=Cloud torrent service
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=ubuntu
+WorkingDirectory=/home/ubuntu/work
+ExecStart=/home/ubuntu/work/src/github.com/jpillora/cloud-torrent/cloud-torrent
+
+Install]
+WantedBy=multi-user.target
