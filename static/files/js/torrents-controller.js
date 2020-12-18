@@ -14,4 +14,8 @@ app.controller("TorrentsController", function($scope, $rootScope, api) {
   $scope.downloading = function(f) {
     return f.Completed > 0 && f.Completed < f.Chunks;
   };
+
+  $scope.isVideo = function(path) {
+    return /\.(mp4|mkv|mov)$/.test(path);
+  };
 });
