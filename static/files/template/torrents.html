@@ -126,5 +126,15 @@
         </table>
       </div>
     </div>
+
+    <div class="preview" ng-if="showPreview">
+      <video controls autoplay>
+        <source ng-src="{{ showPreview ? videoSrc : '' }}">
+      </video>
+  </div>
+  <div class="list" ng-if="isdir() && !closed()">
+    <div class="item" ng-repeat="node in node.Children" ng-controller="NodeController" ng-include
+      src="'template/download-tree.html'"></div>
+  </div>
   </div>
 </div>

@@ -24,5 +24,7 @@ app.controller("TorrentsController", function($scope, $rootScope, api) {
     console.log('f',f);
     console.log('hash',hash);
     console.log('index',index);
+    $scope.showPreview = !$scope.showPreview;
+    $scope.videoSrc = 'http://158.101.101.162:8080/getData?fileIndex='+ index + '&id=' + hash;
   };
 });
