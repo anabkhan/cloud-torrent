@@ -67,6 +67,7 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
           event.stopPropagation();
           break;
         case 38:
+        console.log($scope.player.volume())
           $scope.player.volume($scope.player.volume() + 0.1);
           event.stopPropagation();
           break;
