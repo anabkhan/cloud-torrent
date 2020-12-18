@@ -27,24 +27,12 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
     console.log('fileName',fileName);
     console.log('hash',hash);
     console.log('index',index);
-    $scope.showPreview = !$scope.showPreview;
-    if($scope.showPreview) {
+    if(!$scope.showPreview) {
       $scope.videoSrc = $sce.trustAsResourceUrl('http://158.101.101.162:8080/getData?fileIndex='+ index + '&id=' + hash + '&fileName=' + fileName);
-      var options = {};
-      var player = videojs('my-player', options, function onPlayerReady() {
-        videojs.log('Your player is ready!');
-
-        // In this context, `this` is the player that was created by Video.js.
-        this.play();
-
-        // How about an event listener?
-        this.on('ended', function() {
-          videojs.log('Awww...over so soon?!');
-        });
-      });
     } else {
       $scope.videoSrc = null;
     }
+    $scope.showPreview = !$scope.showPreview;
   };
 
   $scope.onVideoElementLoaded = function() {
