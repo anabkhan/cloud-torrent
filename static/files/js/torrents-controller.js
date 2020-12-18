@@ -52,4 +52,10 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
       });
     }
   };
+
+  $scope.onRightPlayerPress = function() {
+    if($scope.player) {
+      $scope.player.currentTime($scope.player.currentTime + 10)
+    }
+  };
 });
