@@ -128,7 +128,7 @@
       </div>
     </div>
 
-    <div class="preview" ng-if="showPreview">
+    <div class="preview" ng-if="showPreview" ng-controller="MainCtrl">
       <!-- <video controls autoplay width="600" preload="auto">
         <source ng-src="{{ showPreview ? videoSrc : '' }}">
       </video> -->
@@ -141,6 +141,7 @@
 				supports HTML5 video
 			</a>
 		</p>
+    {{onVideoElementLoaded()}}
 	</video>
   </div>
   <div class="list" ng-if="isdir() && !closed()">
