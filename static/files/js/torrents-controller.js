@@ -35,6 +35,10 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
     $scope.showPreview = !$scope.showPreview;
   };
 
+  $scope.$on('$viewContentLoaded', function(){
+    onVideoElementLoaded();
+  });
+
   $scope.onVideoElementLoaded = function() {
     var options = {};
       var player = videojs('my-player', options, function onPlayerReady() {
