@@ -23,7 +23,7 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
     console.log('t',t);
     console.log('f',f);
     const paths = f.Path.split('/');
-    var fileName = paths[paths.length -  1]
+    var fileName = paths[paths.length -  1].trim().replace(/ /g,'');
     console.log('fileName',fileName);
     console.log('hash',hash);
     console.log('index',index);
