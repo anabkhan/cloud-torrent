@@ -127,11 +127,11 @@
       </div>
     </div>
 
-    <div class="preview" ng-if="showPreview" ng-controller="TorrentsController" style="max-width: 100% !important;">
+    <div class="preview" ng-if="showPreview" ng-controller="TorrentsController" style="max-width: 100% !important;max-height: 300px !important;">
       <!-- <video controls autoplay width="600" preload="auto">
         <source ng-src="{{ showPreview ? videoSrc : '' }}">
       </video> -->
-      <video id="my-player" ng-keydown="onKeyPress($event)" class="video-js vjs-theme-city" controls preload="auto" style="max-width: inherit !important;max-height: 300px !important;">
+      <video id="my-player" ng-keydown="onKeyPress($event)" class="video-js vjs-theme-city" controls preload="auto" style="max-width: inherit !important;">
         <source ng-src="{{ showPreview ? videoSrc : '' }}" type="video/mp4">
         </source>
         <p class="vjs-no-js">
