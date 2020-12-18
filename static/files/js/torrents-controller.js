@@ -53,9 +53,23 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
     }
   };
 
-  $scope.onRightPlayerPress = function() {
+  $scope.onRightPlayerPress = function(event) {
+    console.log('key pressed', event)
     if($scope.player) {
-      $scope.player.currentTime($scope.player.currentTime + 10)
+      switch(event.which) {
+        case 39:
+          $scope.player.currentTime($scope.player.currentTime + 10);
+          break;
+        case 37:
+          $scope.player.currentTime($scope.player.currentTime - 10);
+          break;
+        case 38:
+          $scope.player.volume($scope.player.volume + 0.1);
+          break;
+        case 40:
+          $scope.player.currentTime($scope.player.currentTime - 0.1);
+          break;
+      }
     }
   };
 });
