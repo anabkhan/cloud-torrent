@@ -1,6 +1,6 @@
 /* globals app */
 
-app.controller("TorrentsController", function($scope, $rootScope, api) {
+app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
   $rootScope.torrents = $scope;
 
   $scope.submitTorrent = function(action, t) {
@@ -28,6 +28,6 @@ app.controller("TorrentsController", function($scope, $rootScope, api) {
     console.log('hash',hash);
     console.log('index',index);
     $scope.showPreview = !$scope.showPreview;
-    $scope.videoSrc = 'http://158.101.101.162:8080/getData?fileIndex='+ index + '&id=' + hash + '&fileName=' + fileName;
+    $scope.videoSrc = $sce.trustAsResourceUrl('http://158.101.101.162:8080/getData?fileIndex='+ index + '&id=' + hash + '&fileName=' + fileName);
   };
 });
