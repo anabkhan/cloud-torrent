@@ -16,6 +16,7 @@ app.controller("TorrentsController", function($scope, $rootScope, api) {
   };
 
   $scope.isVideo = function(path) {
-    return /\.(mp4|mkv|mov)$/.test(path);
+    return true;
+    // return /\.(mp4|mkv|mov)$/.test(path);
   };
 });
