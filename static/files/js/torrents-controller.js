@@ -18,4 +18,11 @@ app.controller("TorrentsController", function($scope, $rootScope, api) {
   $scope.isVideo = function(path) {
     return /\.(mp4|mkv|mov)$/.test(path);
   };
+
+  $scope.streamVideo = function(t,f,hash,index) {
+    console.log('t',t);
+    console.log('f',f);
+    console.log('hash',hash);
+    console.log('index',index);
+  };
 });
