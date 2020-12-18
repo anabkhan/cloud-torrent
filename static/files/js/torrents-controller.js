@@ -58,8 +58,8 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
     if($scope.player) {
       switch(event.which) {
         case 39:
-        console.log($scope.player.currentTime)
-          $scope.player.currentTime($scope.player.currentTime + 10);
+        console.log($scope.player.currentTime())
+          $scope.player.currentTime($scope.player.currentTime() + 10);
           break;
         case 37:
           $scope.player.currentTime($scope.player.currentTime - 10);
