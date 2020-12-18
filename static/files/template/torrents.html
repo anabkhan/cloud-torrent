@@ -1,3 +1,5 @@
+<link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet">
+<script src="https://unpkg.com/video.js/dist/video.min.js"></script>
 <div class="section-header">
   <h3 class="ui header">
     Torrents
@@ -128,9 +130,19 @@
     </div>
 
     <div class="preview" ng-if="showPreview">
-      <video controls autoplay width="600" preload="auto">
+      <!-- <video controls autoplay width="600" preload="auto">
         <source ng-src="{{ showPreview ? videoSrc : '' }}">
-      </video>
+      </video> -->
+	<video id="my-player" class="video-js" controls preload="auto" data-setup='{}'>
+		<source ng-src="{{ showPreview ? videoSrc : '' }}">
+		</source>
+		<p class="vjs-no-js">
+			To view this video please enable JavaScript, and consider upgrading to a web browser that
+			<a href="https://videojs.com/html5-video-support/" target="_blank">
+				supports HTML5 video
+			</a>
+		</p>
+	</video>
   </div>
   <div class="list" ng-if="isdir() && !closed()">
     <div class="item" ng-repeat="node in node.Children" ng-controller="NodeController" ng-include
