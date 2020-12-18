@@ -60,20 +60,20 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
         case 39:
         console.log($scope.player.currentTime())
           $scope.player.currentTime($scope.player.currentTime() + 10);
-          event.stopPropagation();
+          event.stopImmediatePropagation();
           break;
         case 37:
           $scope.player.currentTime($scope.player.currentTime() - 10);
-          event.stopPropagation();
+          event.stopImmediatePropagation();
           break;
         case 38:
         console.log($scope.player.volume())
           $scope.player.volume($scope.player.volume() + 0.1);
-          event.stopPropagation();
+          event.stopImmediatePropagation();
           break;
         case 40:
-          $scope.player.currentTime($scope.player.currentTime() - 0.1);
-          event.stopPropagation();
+          $scope.player.volume($scope.player.volume() - 0.1);
+          event.stopImmediatePropagation();
           break;
       }
     }
