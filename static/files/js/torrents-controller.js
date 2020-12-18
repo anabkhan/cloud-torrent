@@ -22,9 +22,12 @@ app.controller("TorrentsController", function($scope, $rootScope, api) {
   $scope.streamVideo = function(t,f,hash,index) {
     console.log('t',t);
     console.log('f',f);
+    const paths = f.Path.split('/');
+    var fileName = paths[paths.length -  1]
+    console.log('fileName',fileName);
     console.log('hash',hash);
     console.log('index',index);
     $scope.showPreview = !$scope.showPreview;
-    $scope.videoSrc = 'http://158.101.101.162:8080/getData?fileIndex='+ index + '&id=' + hash;
+    $scope.videoSrc = 'http://158.101.101.162:8080/getData?fileIndex='+ index + '&id=' + hash + '&fileName=' + fileName;
   };
 });
