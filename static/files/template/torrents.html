@@ -109,7 +109,7 @@
                 <i ng-if="f.Percent == 100" class="green check icon"></i>
 
                 <!-- Button to stream video file -->
-                <i class="blue video play outline icon"></i>
+                <i ng-show="imagePreview || videoPreview || audioPreview" ng-click="togglePreview()" class="blue {{ showPreview ? 'circle outline' : 'video play outline' }} icon"></i>
               </td>
             </tr>
           </tbody>
