@@ -33,9 +33,15 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
       $scope.videoSrc = null;
     }
     $scope.showPreview = !$scope.showPreview;
+
+    angular.element('my-player').ready(function () {
+    console.log('page loading completed');
+    onVideoElementLoaded();
+});
   };
 
   $scope.$on('$viewContentLoaded', function(){
+    console.log('viewContentLoaded')
     onVideoElementLoaded();
   });
 
