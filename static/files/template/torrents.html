@@ -143,6 +143,7 @@
 		</p>
 	</video>
   <div>
+    {{onVideoElementLoaded()}}
   </div>
   <div class="list" ng-if="isdir() && !closed()">
     <div class="item" ng-repeat="node in node.Children" ng-controller="NodeController" ng-include
