@@ -46,6 +46,7 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
         type: 'video/' + $scope.fileName.split('.').pop()
         }]
       };
+      console.log('video type ', $scope.fileName.split('.').pop());
       $scope.player = videojs('my-player', options, function onPlayerReady() {
         videojs.log('Your player is ready!');
 
