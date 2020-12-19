@@ -65,7 +65,7 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
   function getVideoMimeType(fileName) {
     var extension = fileName.split('.').pop();
     if(extension === 'mkv') {
-      return 'video/x-matroska';
+      return 'video/webm';
     } else {
       return 'video/' + extension;
     }
