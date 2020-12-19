@@ -23,12 +23,12 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
     console.log('t',t);
     console.log('f',f);
     const paths = f.Path.split('/');
-    var fileName = paths[paths.length -  1].trim().replace(/ /g,'');
-    console.log('fileName',fileName);
+    $scope.fileName = paths[paths.length -  1].trim().replace(/ /g,'');
+    console.log('fileName',$scope.fileName);
     console.log('hash',hash);
     console.log('index',index);
     if(!$scope.showPreview) {
-      $scope.videoSrc = $sce.trustAsResourceUrl('http://158.101.101.162:8080/getData?fileIndex='+ index + '&id=' + hash + '&fileName=' + fileName);
+      $scope.videoSrc = $sce.trustAsResourceUrl('http://158.101.101.162:8080/getData?fileIndex='+ index + '&id=' + hash + '&fileName=' + $scope.fileName);
     } else {
       $scope.videoSrc = null;
     }
@@ -37,8 +37,13 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
   };
 
   $scope.onVideoElementLoaded = function() {
-    var options = {};
     if(!$scope.player) {
+      var options = {
+        sources: [{
+        src: $scope.videoSrc,
+        type: 'video/' + $scope.fileName.split('.').pop()
+        }]
+      };
       $scope.player = videojs('my-player', options, function onPlayerReady() {
         videojs.log('Your player is ready!');
 
