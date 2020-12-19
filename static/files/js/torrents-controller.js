@@ -31,8 +31,9 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
     if(!$scope.showPreview) {
       $scope.videoSrc = $sce.trustAsResourceUrl('http://158.101.101.162:8080/getData?fileIndex='+ index + '&id=' + hash + '&fileName=' + $scope.fileName);
     } else {
-      $scope.videoSrc = null;
-      $scope.player.pause();
+      $scope.videoSrc = '';
+      var video = document.querySelector("video");
+      if(video) { video.pause() }
       $scope.player = null;
     }
     $scope.showPreview = !$scope.showPreview; 
