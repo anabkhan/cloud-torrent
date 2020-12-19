@@ -40,14 +40,14 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
 
   $scope.onVideoElementLoaded = function() {
     if(!$scope.player) {
-      var options = {
-        sources: [{
-        src: $scope.videoSrc,
-        type: 'video/' + $scope.fileName.split('.').pop()
-        }]
-      };
+      // var options = {
+      //   sources: [{
+      //   src: $scope.videoSrc,
+      //   type: 'video/' + $scope.fileName.split('.').pop()
+      //   }]
+      // };
       console.log('video type ', $scope.fileName.split('.').pop());
-      $scope.player = videojs('my-player', options, function onPlayerReady() {
+      $scope.player = videojs('my-player', {}, function onPlayerReady() {
         videojs.log('Your player is ready!');
 
         // In this context, `this` is the player that was created by Video.js.
