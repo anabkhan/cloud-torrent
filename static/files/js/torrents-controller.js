@@ -46,7 +46,7 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
       //   type: 'video/' + $scope.fileName.split('.').pop()
       //   }]
       // };
-      document.querySelector("video > source").type = "video/" + $scope.fileName.split('.').pop();
+      document.querySelector("video > source").type = getVideoMimeType($scope.fileName);
       console.log('video type ', $scope.fileName.split('.').pop());
       $scope.player = videojs('my-player', {}, function onPlayerReady() {
         videojs.log('Your player is ready!');
@@ -61,6 +61,15 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
       });
     }
   };
+
+  function getVideoMimeType(fileName) {
+    var extension = fileName.split('.').pop();
+    if(extension === 'mkv') {
+      return 'video/x-matroska';
+    } else {
+      return 'video/' + extension;
+    }
+  }
 
   $scope.onKeyPress = function(event) {
     console.log('key pressed', event)
