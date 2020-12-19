@@ -41,12 +41,6 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
 
   $scope.onVideoElementLoaded = function() {
     if(!$scope.player) {
-      // var options = {
-      //   sources: [{
-      //   src: $scope.videoSrc,
-      //   type: 'video/' + $scope.fileName.split('.').pop()
-      //   }]
-      // };
       document.querySelector("video > source").type = getVideoMimeType($scope.fileName);
       console.log('video type ', $scope.fileName.split('.').pop());
       $scope.player = videojs('my-player', {}, function onPlayerReady() {
