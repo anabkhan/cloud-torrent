@@ -48,12 +48,12 @@ func (s *Server) fetchSearchConfig() error {
 	if bytes.Equal(currentConfig, newConfig) {
 		return nil //skip
 	}
-	if err := s.scraper.LoadConfig(newConfig); err != nil {
+	if err := s.scraper.LoadConfig(currentConfig); err != nil {
 		return err
 	}
 	s.state.SearchProviders = s.scraper.Config
 	s.state.Push()
-	currentConfig = newConfig
+	// currentConfig = newConfig
 	log.Printf("Loaded new search providers")
 	return nil
 }
