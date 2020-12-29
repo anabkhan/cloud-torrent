@@ -43,7 +43,7 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
     const paths = f.Path.split('/');
     var fileName = paths[paths.length -  1].trim().replace(/ /g,'');
     var url = '158.101.101.162:8080/getData?fileIndex='+ index + '&id=' + hash + '&fileName=' + fileName;
-    var intentUrl =  "intent:" + url +"#Intent;package=com.mxtech.videoplayer.ad;S.title=" + fileName + ";end";
+    var intentUrl =  "intent:" + "http://devimages.apple.com/iphone/samples/bipbop/bipbopall.m3u8" +"#Intent;package=com.mxtech.videoplayer.ad;S.title=" + fileName + ";end";
     return intentUrl;
   };
 
