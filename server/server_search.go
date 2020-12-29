@@ -146,11 +146,10 @@ var defaultSearchConfig = []byte(`{
 	"tpb": {
 		"name": "The Pirate Bay",
 		"url": "https://thepiratebay.org/search/{{query}}/{{page:0}}/7//",
-		"list": "#searchResult > tbody > tr",
+		"list": "#torrents > li",
 		"result": {
-			"name":"a.detLink",
-			"path":["a.detLink","@href"],
-			"magnet": ["a[title=Download\\ this\\ torrent\\ using\\ magnet]","@href"],
+			"name":[".item-title a:nth-child(1)"],
+			"magnet": ["item-icons a:nth-child(1)","@href"],
 			"size": "/Size (\\d+(\\.\\d+).[KMG]iB)/",
 			"seeds": "td:nth-child(3)",
 			"peers": "td:nth-child(4)"
