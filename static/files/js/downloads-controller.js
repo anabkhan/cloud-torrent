@@ -115,7 +115,14 @@ app.controller("NodeController", function($scope, $rootScope, $http, $timeout) {
       })
       .catch(console.error);
       } else {
-          shareDialog.classList.add('is-open');
+          // shareDialog.classList.add('is-open');
+          var input = document.createElement('textarea');
+          input.innerHTML = url;
+          document.body.appendChild(input);
+          input.select();
+          var result = document.execCommand('copy');
+          document.body.removeChild(input);
+          window.prompt("Copy to clipboard: Ctrl+C, Enter", url);
       }
   };
 });
