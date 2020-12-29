@@ -39,10 +39,11 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
     $scope.showPreview = !$scope.showPreview; 
   };
 
-  $scope.getVideoSrc = function(t,f,hash,index) {
+  $scope.getVideoSrcForMX = function(t,f,hash,index) {
     const paths = f.Path.split('/');
     var fileName = paths[paths.length -  1].trim().replace(/ /g,'');
-    return 'http://158.101.101.162:8080/getData?fileIndex='+ index + '&id=' + hash + '&fileName=' + fileName;
+    var url = 'http://158.101.101.162:8080/getData?fileIndex='+ index + '&id=' + hash + '&fileName=' + fileName;
+    return $sce.trustAsResourceUrl("intent:" + url +" #Intent;package=com.mxtech.videoplayer.ad;S.title=New%20title;end");
   };
 
   $scope.getFileName = function(t,f,hash,index) {
