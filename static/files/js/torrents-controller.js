@@ -67,6 +67,12 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
       } else {
           // shareDialog.classList.add('is-open');
           // copying to clipboard
+          var input = document.createElement('textarea');
+          input.innerHTML = url;
+          document.body.appendChild(input);
+          input.select();
+          var result = document.execCommand('copy');
+          document.body.removeChild(input);
           window.prompt("Copy to clipboard: Ctrl+C, Enter", url);
       }
   };
