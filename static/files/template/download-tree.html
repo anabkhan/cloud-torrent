@@ -14,8 +14,8 @@
       <i ng-show="!deleting && confirm" ng-click="deleting = true; remove();" class="red check icon"></i>
       <i ng-show="deleting" class="grey notched circle loading icon"></i>
       <i ng-show="imagePreview || videoPreview || audioPreview" ng-click="togglePreview()" class="blue {{ showPreview ? 'circle outline' : 'video play outline' }} icon"></i>
-      <a ng-href="intent:{{ showPreview ? ('download/'+node.$path) : '' }}#Intent;package=com.mxtech.videoplayer.ad;S.title=Video;end"
-                 ng-if="imagePreview || videoPreview || audioPreview" class="blue video play outline icon" style="
+      <a ng-href="intent:{{('download/'+node.$path)}}#Intent;package=com.mxtech.videoplayer.ad;S.title=Video;end"
+                 ng-if="videoPreview || audioPreview" class="blue video play outline icon" style="
                   border: 1px solid !important;
                   display: inline;
                   padding: 2px;">MX</a>
