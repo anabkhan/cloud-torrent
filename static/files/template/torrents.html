@@ -110,6 +110,13 @@
 
                 <!-- Button to stream video file -->
                 <i ng-if="isVideo(f.Path)" ng-click="streamVideo(t,f,hash,$index)" class="blue {{ showPreview ? 'circle outline' : 'video play outline' }} icon"></i>
+
+                <!-- Play in MX Player -->
+                <a href="intent:{{getVideoSrc(t,f,hash,$index)}}#Intent;package=com.mxtech.videoplayer.ad;S.title=New%20title;end"
+                 ng-if="isVideo(f.Path)" class="blue video play outline icon" style="
+                  border: 1px solid !important;
+                  display: inline;
+                  padding: 2px;">MX</a>
               </td>
             </tr>
           </tbody>
