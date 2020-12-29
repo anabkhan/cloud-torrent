@@ -56,8 +56,6 @@ func (s *Server) fetchSearchConfig() error {
 	s.state.Push()
 	// currentConfig = newConfig
 	log.Printf("Loaded new search providers")
-  scr, _ := json.MarshalIndent(s.state.SearchProviders, "", "\t");
-  log.Print(scr)
 	return nil
 }
 
