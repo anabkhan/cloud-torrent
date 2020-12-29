@@ -1,9 +1,7 @@
 /* globals app */
 
-app.controller("TorrentsController", function($scope, $rootScope, api, $sce, $compileProvider) {
+app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
   $rootScope.torrents = $scope;
-
-  $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension):/);
 
   $scope.submitTorrent = function(action, t) {
     api.torrent([action, t.InfoHash].join(":"));
@@ -124,3 +122,7 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce, $co
     }
   };
 });
+
+app.config(['$compileProvider', function ($compileProvider) {
+    $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|local|data|chrome-extension|intent):/);
+}]);
