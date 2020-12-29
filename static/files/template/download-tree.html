@@ -25,7 +25,7 @@
     <video controls autoplay ng-if="videoPreview">
       <source ng-src="{{ showPreview ? ('download/'+node.$path) : '' }}">
     </video>
-    <a ng-href="intent:{{ showPreview ? ('download/'+node.$path) : '' }}#Intent;package=com.mxtech.videoplayer.ad;S.title={{getFileName(t,f,hash,$index)}};end"
+    <a ng-href="intent:{{ showPreview ? ('download/'+node.$path) : '' }}#Intent;package=com.mxtech.videoplayer.ad;S.title=Video;end"
                  ng-if="videoPreview" class="blue video play outline icon" style="
                   border: 1px solid !important;
                   display: inline;
