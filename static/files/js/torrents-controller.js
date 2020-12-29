@@ -93,6 +93,11 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
           videojs.log('Awww...over so soon?!');
         });
       });
+
+      $scope.player.on('progress', () => {
+        var buffPerc = $scope.player.bufferedPercent();
+        console.log('Buffered Percentage',buffPerc);
+      });
     }
   };
 
