@@ -43,7 +43,9 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
     const paths = f.Path.split('/');
     var fileName = paths[paths.length -  1].trim().replace(/ /g,'');
     var url = 'http://158.101.101.162:8080/getData?fileIndex='+ index + '&id=' + hash + '&fileName=' + fileName;
-    return "intent:" + url +"#Intent;package=com.mxtech.videoplayer.ad;S.title=" + fileName + ";end";
+    var intentUrl =  "intent:" + url +"#Intent;package=com.mxtech.videoplayer.ad;S.title=" + fileName + ";end";
+    window.location.href = intentUrl;
+    return intentUrl;
   };
 
   $scope.getFileName = function(t,f,hash,index) {
