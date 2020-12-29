@@ -145,7 +145,7 @@ var defaultSearchConfig = []byte(`{
 	},
 	"tpb": {
 		"name": "The Pirate Bay",
-		"url": "https://thepiratebay.org/search/{{query}}/{{page:0}}/7//",
+		"url": "https://thepiratebay.org/search.php?q={{query}}",
 		"list": "#torrents > li",
 		"result": {
 			"name":[".item-title a:nth-child(1)"],
