@@ -104,4 +104,18 @@ app.controller("NodeController", function($scope, $rootScope, $http, $timeout) {
   $scope.togglePreview = function() {
     $scope.showPreview = !$scope.showPreview;
   };
+
+  $scope.shareVideo = function(url) {
+    if (navigator.share) { 
+    navigator.share({
+        title: 'Share Video',
+        url: url
+      }).then(() => {
+        console.log('Thanks for sharing!');
+      })
+      .catch(console.error);
+      } else {
+          shareDialog.classList.add('is-open');
+      }
+  };
 });

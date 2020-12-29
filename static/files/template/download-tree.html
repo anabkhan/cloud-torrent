@@ -25,6 +25,13 @@
     <video controls autoplay ng-if="videoPreview">
       <source ng-src="{{ showPreview ? ('download/'+node.$path) : '' }}">
     </video>
+    <a ng-href="intent:{{ showPreview ? ('download/'+node.$path) : '' }}#Intent;package=com.mxtech.videoplayer.ad;S.title={{getFileName(t,f,hash,$index)}};end"
+                 ng-if="videoPreview" class="blue video play outline icon" style="
+                  border: 1px solid !important;
+                  display: inline;
+                  padding: 2px;">MX</a>
+
+                  <img src="css/themes/default/assets/images/share.png" ng-click="shareVideo('download/'+node.$path)" width="20" height="20">
   </div>
   <div class="list" ng-if="isdir() && !closed()">
     <div class="item" ng-repeat="node in node.Children" ng-controller="NodeController" ng-include
