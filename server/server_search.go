@@ -49,13 +49,14 @@ func (s *Server) fetchSearchConfig() error {
 		return nil //skip
 	}
 	if err := s.scraper.LoadConfig(currentConfig); err != nil {
+    log.Fatal(err)
 		return err
 	}
 	s.state.SearchProviders = s.scraper.Config
 	s.state.Push()
 	// currentConfig = newConfig
 	log.Printf("Loaded new search providers")
-  log.Printf(s.scraper.Config)
+  // log.Printf(s.scraper.Config)
 	return nil
 }
 
