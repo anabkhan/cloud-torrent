@@ -51,6 +51,24 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
     return fileName;
   };
 
+  $scope.shareVideo = function(t,f,hash,index) {
+    const paths = f.Path.split('/');
+    var fileName = paths[paths.length -  1].trim().replace(/ /g,'');
+    var url = 'http://158.101.101.162:8080/getData?fileIndex='+ index + '&id=' + hash + '&fileName=' + fileName;
+    if (navigator.share) { 
+    navigator.share({
+        title: 'Share Video',
+        url: url
+      }).then(() => {
+        console.log('Thanks for sharing!');
+      })
+      .catch(console.error);
+      } else {
+          shareDialog.classList.add('is-open');
+      }
+    }
+  };
+
   $scope.onVideoElementLoaded = function() {
     if(!$scope.player) {
       document.querySelector("video > source").type = getVideoMimeType($scope.fileName);
