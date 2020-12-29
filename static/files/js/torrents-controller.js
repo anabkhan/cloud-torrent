@@ -124,5 +124,5 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
 });
 
 angular.module('app').config(['$compileProvider', function ($compileProvider) {
-    $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|local|data|chrome-extension|intent):/);
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|local|data|chrome-extension|intent):/);
 }]);
