@@ -65,7 +65,9 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
       })
       .catch(console.error);
       } else {
-          shareDialog.classList.add('is-open');
+          // shareDialog.classList.add('is-open');
+          // copying to clipboard
+          window.prompt("Copy to clipboard: Ctrl+C, Enter", url);
       }
   };
 
