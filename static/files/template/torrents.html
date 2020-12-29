@@ -112,7 +112,7 @@
                 <i ng-if="isVideo(f.Path)" ng-click="streamVideo(t,f,hash,$index)" class="blue {{ showPreview ? 'circle outline' : 'video play outline' }} icon"></i>
 
                 <!-- Play in MX Player -->
-                <a ng-href="{{getVideoSrcForMX(t,f,hash,$index)}}"
+                <a ng-href="intent:{{('http://158.101.101.162:9999/download/')}}#Intent;package=com.mxtech.videoplayer.ad;S.title=Video;end"
                  ng-if="isVideo(f.Path)" class="blue video play outline icon" style="
                   border: 1px solid !important;
                   display: inline;
