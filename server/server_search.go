@@ -57,6 +57,7 @@ func (s *Server) fetchSearchConfig() error {
 	// currentConfig = newConfig
 	log.Printf("Loaded new search providers")
   // log.Printf(s.scraper.Config)
+  log.Fatal(s)
 	return nil
 }
 
