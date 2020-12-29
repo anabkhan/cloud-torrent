@@ -66,7 +66,6 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
       } else {
           shareDialog.classList.add('is-open');
       }
-    }
   };
 
   $scope.onVideoElementLoaded = function() {
