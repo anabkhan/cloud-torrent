@@ -58,7 +58,7 @@ app.controller("TorrentsController", function($scope, $rootScope, api, $sce, $wi
     var fileName = paths[paths.length -  1].trim().replace(/ /g,'');
     var url = 'http://158.101.101.162:8080/getData?fileIndex='+ index + '&id=' + hash + '&fileName=' + fileName;
     console.log('navigator', $window.navigator);
-    const navigator = $window.navigator as any;
+    const navigator = $window.navigator;
     if (navigator.share) { 
     navigator.share({
         title: 'Share Video',
