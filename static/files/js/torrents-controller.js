@@ -1,6 +1,6 @@
 /* globals app */
 
-app.controller("TorrentsController", function($scope, $rootScope, api, $sce) {
+app.controller("TorrentsController", function($scope, $rootScope, api, $sce, $window) {
   $rootScope.torrents = $scope;
 
   $scope.submitTorrent = function(action, t) {
