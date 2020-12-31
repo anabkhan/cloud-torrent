@@ -122,7 +122,7 @@ var defaultSearchConfig = []byte(`{
 		"name": "1337X (Item)",
 		"url": "http://1337x.to{{item}}",
 		"result": {
-			"magnet": [".download-links-dontblock a.btn","@href"]
+			"magnet": ["a[href^='magnet:']", "@href"]
 		}
 	},
 	"abb": {
