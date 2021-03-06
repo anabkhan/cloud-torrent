@@ -42,4 +42,6 @@ RUN set -ex \
 	&& apk del .build-deps \
 	&& rm -rf /no-pic.patch $GOPATH /usr/local/go
 #run!
+ENV PORT 8080
+EXPOSE 8080
 ENTRYPOINT ["cloud-torrent"]
